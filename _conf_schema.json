@@ -1,0 +1,50 @@
+{
+  "enabled": {
+    "description": "全局记忆总开关",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后不捕获也不注入。"
+  },
+  "capture_files": {
+    "description": "捕获收到的文件",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后会把 docx/xlsx/pptx/pdf/txt/md/csv 等文件的正文抽出来入库，跨会话可检索。"
+  },
+  "capture_tools": {
+    "description": "捕获工具调用事件",
+    "type": "bool",
+    "default": true,
+    "hint": "记录每次工具调用的名称、参数与结果摘要，方便日后追溯'你之前处理过什么'。"
+  },
+  "inject_enabled": {
+    "description": "自动注入相关全局记忆",
+    "type": "bool",
+    "default": true,
+    "hint": "每轮对话按当前消息检索全局记忆，命中则作为临时上下文注入，不写入历史、不干扰人格。"
+  },
+  "inject_top_k": {
+    "description": "每轮最多注入条数",
+    "type": "int",
+    "default": 3,
+    "hint": "建议 2-4 条，太多会挤占上下文。"
+  },
+  "inject_max_chars": {
+    "description": "每轮注入字符上限",
+    "type": "int",
+    "default": 1200,
+    "hint": "控制注入块总长度，防止长文档挤爆上下文。"
+  },
+  "file_text_max_chars": {
+    "description": "单个文件正文最大提取字数",
+    "type": "int",
+    "default": 6000,
+    "hint": "超过会被截断。检索时只注入命中片段，不受此限制影响存储。"
+  },
+  "max_file_mb": {
+    "description": "解析文件大小上限（MB）",
+    "type": "int",
+    "default": 30,
+    "hint": "超过该大小的文件只记录元信息，不解析正文。"
+  }
+}

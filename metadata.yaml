@@ -1,0 +1,14 @@
+name: astrbot_plugin_global_memory
+display_name: 全局记忆桥
+short_desc: 补齐记忆插件对文件正文与工具事件的盲区，跨会话检索
+desc: >-
+  补齐 LivingMemory 的文件与事件盲区：文件正文抽取入库、工具调用记录、跨会话检索注入。
+version: 0.1.0
+author: xiaoli0412
+repo: https://github.com/xiaoli0412/astrbot_plugin_global_memory
+category: 记忆增强
+tags: [记忆, 文件抽取, 检索, FTS5]
+support_platforms:
+  - *
+astrbot_version: '>=4.24,<5'
+license: MIT
